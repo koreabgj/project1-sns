@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileActivity">
+
+    <ImageView
+        android:id="@+id/ib_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:src="@drawable/baseline_arrow_back_48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ib_back"
+        app:layout_constraintStart_toEndOf="@id/ib_back"
+        app:layout_constraintTop_toTopOf="@id/ib_back"
+        tools:text="newjeans_official" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/logout"
+        android:background="@drawable/radius_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_thumbnail"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="24dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/profile_circle_background"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_nickname"
+        tools:clipToOutline="true"
+        tools:src="@drawable/new_jeans_thumbnail" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:orientation="vertical"
+        app:constraint_referenced_ids="tv_post_count,tv_post_text"
+        app:layout_constraintBottom_toBottomOf="@id/iv_thumbnail"
+        app:layout_constraintStart_toEndOf="@id/iv_thumbnail"
+        app:layout_constraintTop_toTopOf="@id/iv_thumbnail" />
+
+    <TextView
+        android:id="@+id/tv_post_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="592" />
+
+    <TextView
+        android:id="@+id/tv_post_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/post"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_introduction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.2"
+        android:lines="2"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_thumbnail"
+        tools:text="최고의 토론만을 펼치는 엉망잔칭 토론클럽입니다.\n매년 엉망잔칭 토론회를 주관하고 있습니다. 최고의 토론만을 펼치는 엉망잔칭 토론클럽입니다. 매년 엉망잔칭 토론회를 주관하고 있습니다." />
+
+    <EditText
+        android:id="@+id/edt_introduction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:textSize="14sp"
+        android:background="@drawable/post_content_border"
+        android:gravity="start"
+        android:visibility="invisible"
+        android:padding="5dp"
+        android:lineSpacingMultiplier="0.8"
+        android:ellipsize="end"
+        android:lines="2"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_thumbnail"
+        tools:text="최고의 토론만을 펼치는 엉망잔칭 토론클럽입니다.\n매년 엉망잔칭 토론회를 주관하고 있습니다. 최고의 토론만을 펼치는 엉망잔칭 토론클럽입니다. 매년 엉망잔칭 토론회를 주관하고 있습니다." />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_edit_profile_thumbnail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/radius_button"
+        android:text="@string/edit_profile_thumbnail"
+        app:layout_constraintEnd_toStartOf="@id/btn_edit_profile_introduction"
+        app:layout_constraintStart_toStartOf="@id/tv_introduction"
+        app:layout_constraintTop_toBottomOf="@id/tv_introduction" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_edit_profile_introduction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/radius_button"
+        android:text="@string/edit_profile_introduction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_edit_profile_thumbnail"
+        app:layout_constraintTop_toBottomOf="@id/tv_introduction" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_create_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/radius_button"
+        android:text="@string/write_post"
+        app:layout_constraintEnd_toEndOf="@id/btn_logout"
+        app:layout_constraintTop_toBottomOf="@id/btn_logout" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_post"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:spanCount="3"
+        tools:listitem="@layout/item_image_at_profile" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
